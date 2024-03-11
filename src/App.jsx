@@ -17,9 +17,10 @@ function App() {
             <h2>Teacher name: {name}</h2>
             <form onSubmit={(e) => {
                 e.preventDefault()
+                changeName(newName)
             }}>
                 <input type='text' value={newName} placeholder='Add a name' onChange={(input) => setNewName(input.target.value)}/>
-                <button onClick={() => changeName(newName)}>Change</button>
+                <button type='submit'>Change</button>
             </form>
         </div>
         // <div>
