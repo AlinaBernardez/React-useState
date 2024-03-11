@@ -15,17 +15,19 @@ function App() {
     return ( 
         <div>
             <h2>Teacher name: {name}</h2>
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault()
+            }}>
                 <input type='text' value={newName} placeholder='Add a name' onChange={(input) => setNewName(input.target.value)}/>
-                <div onClick={() => changeName(newName)}>Change</div>
+                <button onClick={() => changeName(newName)}>Change</button>
             </form>
         </div>
         // <div>
         //     <h2>Teacher name: {name}</h2>
         //     <ul>
-        //         <li onClick={() => changeName('Data')}>Data</li>
-        //         <li onClick={() => changeName('Reyes')}>Reyes</li>
-        //         <li onClick={() => changeName('Yolanda')}>Yolanda</li>
+        //         <li onClick={() => setName('Data')}>Data</li>
+        //         <li onClick={() => setName('Reyes')}>Reyes</li>
+        //         <li onClick={() => setName('Yolanda')}>Yolanda</li>
         //     </ul>
         // </div>
     )
